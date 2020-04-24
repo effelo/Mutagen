@@ -2,6 +2,7 @@ using BenchmarkDotNet.Attributes;
 using Mutagen.Bethesda.Binary;
 using Mutagen.Bethesda.Oblivion;
 using Mutagen.Bethesda.Oblivion.Internals;
+using Mutagen.Bethesda.Preprocessing;
 using Noggog;
 using Noggog.Utility;
 using System;
@@ -20,7 +21,7 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
         public static TempFolder TempFolder;
         public static ModKey ModKey;
         public static string DataPath;
-        public static string BinaryPath;
+        public static string OutputPath;
         public static MemoryStream DataOutput;
         public static BinaryWriteParameters WriteParametersNoCheck = new BinaryWriteParameters()
         {
@@ -39,10 +40,16 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
             System.Console.WriteLine("Target settings: " + Settings.ToString());
 
             // Setup folders and paths
-            ModKey = new ModKey("Oblivion", true);
             TempFolder = new TempFolder(deleteAfter: true);
-            DataPath = Path.Combine(Settings.DataFolderLocations.Oblivion, "Oblivion.esm");
-            BinaryPath = Path.Combine(TempFolder.Dir.Path, "Oblivion.esm");
+            DataPath = Path.Combine(TempFolder.Dir.Path, "Oblivion.esm");
+            using (var decompress = File.OpenWrite(DataPath))
+            {
+                ModDecompressor.Decompress(
+                    () => File.OpenRead(Path.Combine(Settings.DataFolderLocations.Oblivion, "Oblivion.esm")),
+                    decompress,
+                    GameMode.Oblivion);
+            }
+            OutputPath = Path.Combine(TempFolder.Dir.Path, "OblivionOut.esm");
 
             // Setup
             Mod = OblivionMod.CreateFromBinary(
@@ -73,7 +80,7 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
             var mod = OblivionModBinaryOverlay.OblivionModFactory(
                 new MemorySlice<byte>(bytes),
                 ModKey);
-            mod.WriteToBinary(BinaryPath, WriteParametersNoCheck);
+            mod.WriteToBinary(OutputPath, WriteParametersNoCheck);
         }
 
         [Benchmark]
@@ -94,7 +101,7 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
             var mod = OblivionModBinaryOverlay.OblivionModFactory(
                 new MemorySlice<byte>(bytes),
                 ModKey);
-            mod.WriteToBinaryParallel(BinaryPath, WriteParametersNoCheck);
+            mod.WriteToBinaryParallel(OutputPath, WriteParametersNoCheck);
         }
 
         [Benchmark]
@@ -111,7 +118,7 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
         [Benchmark]
         public void WriteBinaryToDisk()
         {
-            Mod.WriteToBinary(BinaryPath, WriteParametersNoCheck);
+            Mod.WriteToBinary(OutputPath, WriteParametersNoCheck);
         }
 
         [Benchmark]
@@ -124,7 +131,7 @@ namespace Mutagen.Bethesda.Tests.Benchmarks
         [Benchmark]
         public void WriteBinaryParallelToDisk()
         {
-            Mod.WriteToBinaryParallel(BinaryPath, WriteParametersNoCheck);
+            Mod.WriteToBinaryParallel(OutputPath, WriteParametersNoCheck);
         }
 
         [Benchmark]

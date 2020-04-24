@@ -1,25 +1,21 @@
 ``` ini
 
-BenchmarkDotNet=v0.12.0, OS=Windows 10.0.18362
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.815 (1909/November2018Update/19H2)
 Intel Core i7-4790K CPU 4.00GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
-.NET Core SDK=3.1.100
-  [Host]     : .NET Core 2.1.14 (CoreCLR 4.6.28207.04, CoreFX 4.6.28208.01), X64 RyuJIT
-  DefaultJob : .NET Core 2.1.14 (CoreCLR 4.6.28207.04, CoreFX 4.6.28208.01), X64 RyuJIT
+.NET Core SDK=3.1.201
+  [Host]     : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT
 
 
 ```
-|                                      Method |    Mean |    Error |   StdDev |  Median |        Gen 0 |       Gen 1 |     Gen 2 |  Allocated |
-|-------------------------------------------- |--------:|---------:|---------:|--------:|-------------:|------------:|----------:|-----------:|
-|                                CreateBinary | 4.266 s | 0.0831 s | 0.1137 s | 4.252 s |  350000.0000 | 123000.0000 | 1000.0000 |  424.35 MB |
-|           CreateAndWriteBinaryOverlayToDisk | 2.831 s | 0.0173 s | 0.0153 s | 2.824 s |  382000.0000 |  57000.0000 |         - | 2711.29 MB |
-|         CreateAndWriteBinaryOverlayToMemory | 2.201 s | 0.0118 s | 0.0104 s | 2.198 s |  464000.0000 |           - |         - |  2286.7 MB |
-|   CreateAndWriteBinaryOverlayParallelToDisk | 2.695 s | 0.0530 s | 0.1119 s | 2.729 s |  779000.0000 | 237000.0000 | 1000.0000 |  425.57 MB |
-| CreateAndWriteBinaryOverlayParallelToMemory | 2.530 s | 0.0917 s | 0.2703 s | 2.450 s |  739000.0000 | 242000.0000 | 1000.0000 |  426.36 MB |
-|      CreateAndWriteBinaryOverlayAsyncToDisk | 2.836 s | 0.0864 s | 0.2547 s | 2.781 s |  987000.0000 | 327000.0000 | 1000.0000 |  463.04 MB |
-|    CreateAndWriteBinaryOverlayAsyncToMemory | 2.704 s | 0.0750 s | 0.2211 s | 2.720 s | 1018000.0000 | 331000.0000 | 1000.0000 |  463.03 MB |
-|                           WriteBinaryToDisk | 1.896 s | 0.0061 s | 0.0054 s | 1.896 s |  185000.0000 |  45000.0000 |         - |  1100.7 MB |
-|                         WriteBinaryToMemory | 1.268 s | 0.0022 s | 0.0021 s | 1.269 s |  168000.0000 |           - |         - |  676.11 MB |
-|                   WriteBinaryParallelToDisk | 1.598 s | 0.0317 s | 0.0602 s | 1.609 s |  540000.0000 | 184000.0000 | 1000.0000 |    16.8 MB |
-|                 WriteBinaryParallelToMemory | 1.823 s | 0.1037 s | 0.3059 s | 1.713 s |  543000.0000 | 185000.0000 | 1000.0000 |    1.85 MB |
-|                      WriteBinaryAsyncToDisk | 1.982 s | 0.0740 s | 0.2160 s | 1.933 s |  751000.0000 | 263000.0000 | 1000.0000 |     6.2 MB |
-|                    WriteBinaryAsyncToMemory | 1.762 s | 0.0363 s | 0.1031 s | 1.766 s |  763000.0000 | 269000.0000 | 1000.0000 |    6.19 MB |
+|                                      Method |    Mean |    Error |   StdDev |       Gen 0 |       Gen 1 |     Gen 2 |    Allocated |
+|-------------------------------------------- |--------:|---------:|---------:|------------:|------------:|----------:|-------------:|
+|                                CreateBinary | 3.972 s | 0.0780 s | 0.0987 s | 323000.0000 | 112000.0000 | 1000.0000 | 2410223296 B |
+|           CreateAndWriteBinaryOverlayToDisk | 3.402 s | 0.0468 s | 0.0391 s | 292000.0000 |  52000.0000 |         - | 2283539504 B |
+|         CreateAndWriteBinaryOverlayToMemory | 2.381 s | 0.0087 s | 0.0068 s | 331000.0000 |   1000.0000 |         - | 1838321976 B |
+|   CreateAndWriteBinaryOverlayParallelToDisk | 2.566 s | 0.0684 s | 0.1940 s | 864000.0000 | 233000.0000 | 1000.0000 | 4242442672 B |
+| CreateAndWriteBinaryOverlayParallelToMemory | 2.462 s | 0.0637 s | 0.1867 s | 639000.0000 | 220000.0000 | 1000.0000 |      3.95 GB |
+|                           WriteBinaryToDisk | 2.391 s | 0.0372 s | 0.0311 s |  92000.0000 |  30000.0000 |         - |  579548032 B |
+|                         WriteBinaryToMemory | 1.327 s | 0.0044 s | 0.0041 s |  32000.0000 |           - |         - |  134330856 B |
+|                   WriteBinaryParallelToDisk | 1.635 s | 0.0558 s | 0.1638 s | 436000.0000 | 150000.0000 | 1000.0000 | 2538712360 B |
+|                 WriteBinaryParallelToMemory | 1.580 s | 0.0514 s | 0.1508 s | 435000.0000 | 151000.0000 | 1000.0000 | 2538748336 B |
