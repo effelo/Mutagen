@@ -8,14 +8,14 @@ Intel Core i7-4790K CPU 4.00GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
 
 
 ```
-|                                      Method |    Mean |    Error |   StdDev |       Gen 0 |       Gen 1 |     Gen 2 |    Allocated |
-|-------------------------------------------- |--------:|---------:|---------:|------------:|------------:|----------:|-------------:|
-|                                CreateBinary | 3.972 s | 0.0780 s | 0.0987 s | 323000.0000 | 112000.0000 | 1000.0000 | 2410223296 B |
-|           CreateAndWriteBinaryOverlayToDisk | 3.402 s | 0.0468 s | 0.0391 s | 292000.0000 |  52000.0000 |         - | 2283539504 B |
-|         CreateAndWriteBinaryOverlayToMemory | 2.381 s | 0.0087 s | 0.0068 s | 331000.0000 |   1000.0000 |         - | 1838321976 B |
-|   CreateAndWriteBinaryOverlayParallelToDisk | 2.566 s | 0.0684 s | 0.1940 s | 864000.0000 | 233000.0000 | 1000.0000 | 4242442672 B |
-| CreateAndWriteBinaryOverlayParallelToMemory | 2.462 s | 0.0637 s | 0.1867 s | 639000.0000 | 220000.0000 | 1000.0000 |      3.95 GB |
-|                           WriteBinaryToDisk | 2.391 s | 0.0372 s | 0.0311 s |  92000.0000 |  30000.0000 |         - |  579548032 B |
-|                         WriteBinaryToMemory | 1.327 s | 0.0044 s | 0.0041 s |  32000.0000 |           - |         - |  134330856 B |
-|                   WriteBinaryParallelToDisk | 1.635 s | 0.0558 s | 0.1638 s | 436000.0000 | 150000.0000 | 1000.0000 | 2538712360 B |
-|                 WriteBinaryParallelToMemory | 1.580 s | 0.0514 s | 0.1508 s | 435000.0000 | 151000.0000 | 1000.0000 | 2538748336 B |
+|                                      Method |    Mean |    Error |   StdDev |  Median |       Gen 0 |       Gen 1 |     Gen 2 |  Allocated |
+|-------------------------------------------- |--------:|---------:|---------:|--------:|------------:|------------:|----------:|-----------:|
+|                                CreateBinary | 3.834 s | 0.0764 s | 0.0967 s | 3.810 s | 328000.0000 | 109000.0000 | 1000.0000 | 2298.55 MB |
+|           CreateAndWriteBinaryOverlayToDisk | 3.402 s | 0.0154 s | 0.0128 s | 3.398 s | 292000.0000 |  52000.0000 |         - | 2177.75 MB |
+|         CreateAndWriteBinaryOverlayToMemory | 2.426 s | 0.0478 s | 0.0621 s | 2.412 s | 332000.0000 |   1000.0000 |         - | 1753.16 MB |
+|   CreateAndWriteBinaryOverlayParallelToDisk | 2.355 s | 0.0506 s | 0.1436 s | 2.339 s | 662000.0000 | 211000.0000 | 1000.0000 | 4046.23 MB |
+| CreateAndWriteBinaryOverlayParallelToMemory | 2.256 s | 0.0461 s | 0.1308 s | 2.257 s | 829000.0000 | 233000.0000 | 1000.0000 | 4046.07 MB |
+|                           WriteBinaryToDisk | 2.331 s | 0.0408 s | 0.0382 s | 2.315 s |  92000.0000 |  30000.0000 |         - |   552.7 MB |
+|                         WriteBinaryToMemory | 1.331 s | 0.0060 s | 0.0053 s | 1.328 s |  32000.0000 |           - |         - |  128.11 MB |
+|                   WriteBinaryParallelToDisk | 1.658 s | 0.0529 s | 0.1561 s | 1.679 s | 432000.0000 | 150000.0000 | 1000.0000 |  2420.6 MB |
+|                 WriteBinaryParallelToMemory | 1.482 s | 0.0590 s | 0.1738 s | 1.420 s | 434000.0000 | 150000.0000 | 1000.0000 | 2420.73 MB |

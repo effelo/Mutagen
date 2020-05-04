@@ -1,14 +1,14 @@
 ``` ini
 
-BenchmarkDotNet=v0.12.0, OS=Windows 10.0.18362
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.815 (1909/November2018Update/19H2)
 Intel Core i7-4790K CPU 4.00GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
-.NET Core SDK=3.1.100
-  [Host]     : .NET Core 2.1.14 (CoreCLR 4.6.28207.04, CoreFX 4.6.28208.01), X64 RyuJIT
-  DefaultJob : .NET Core 2.1.14 (CoreCLR 4.6.28207.04, CoreFX 4.6.28208.01), X64 RyuJIT
+.NET Core SDK=3.1.201
+  [Host]     : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.3 (CoreCLR 4.700.20.11803, CoreFX 4.700.20.12001), X64 RyuJIT
 
 
 ```
 |  Method |     Mean |   Error |  StdDev |
 |-------- |---------:|--------:|--------:|
-|  Direct | 170.1 ns | 0.99 ns | 0.88 ns |
-| Wrapped | 172.8 ns | 1.70 ns | 1.59 ns |
+|  Direct | 128.2 ns | 0.89 ns | 0.79 ns |
+| Wrapped | 128.3 ns | 0.55 ns | 0.49 ns |
