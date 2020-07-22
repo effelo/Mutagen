@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="HeadPart" recordType="HDPT" objType="Record" majorFlag="true" baseClass="Fo4MajorRecord">
+    <Interface>ITranslatedNamed</Interface>
+    <Interface>IModeled</Interface>
+    <Fields>
+      <String name="Name" recordType="FULL" translated="Normal" />
+      <RefDirect name="Model" refName="Model" />
+      <Enum name="Flags" enumName="HeadPart.Flag" byteLength="1" recordType="DATA" hasBeenSet="False" />
+      <Enum name="Type" enumName="HeadPart.TypeEnum" byteLength="4" recordType="PNAM" />
+      <List name="ExtraParts">
+        <FormLink refName="HeadPart" recordType="HNAM" />
+      </List>
+      <RefList name="Parts" refName="Part" />
+      <FormLink name="TextureSet" refName="TextureSet" recordType="TNAM" />
+      <FormLink name="Color" refName="ColorRecord" recordType="CNAM" />
+      <FormLink name="ValidRaces" recordType="RNAM" refName="FormList" />
+    </Fields>
+  </Object>
+  <Object name="Part" objType="Subrecord" >
+    <Fields>
+      <Enum name="PartType" enumName="Part.PartTypeEnum" byteLength="4" recordType="NAM0" />
+      <String name="FileName" recordType="NAM1" translated="DL" />
+    </Fields>
+  </Object>
+</Loqui>

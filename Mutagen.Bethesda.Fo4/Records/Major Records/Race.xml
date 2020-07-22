@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="Race" recordType="RACE" objType="Record" baseClass="Fo4MajorRecord" >
+    <Interface>ITranslatedNamed</Interface>
+    <Fields>
+      <FormLink name="AnimationSound" refName="AnimationSoundTagSet" />
+      <String name="Name" recordType="FULL" translated="Normal" />
+      <String name="Description" recordType="DESC" hasBeenSet="False" />
+      <List name="ActorEffect" counterRecType="SPCT">
+        <FormLink refName="ASpell" recordType="SPLO" />
+      </List>
+      <FormLink name="Skin" refName="Armor" recordType="WNAM" />
+      <RefDirect name="BodyTemplate" refName="BodyTemplate" />
+      <List name="Keywords" counterRecType="KSIZ" recordType="KWDA">
+        <FormLink refName="Keyword" />
+      </List>
+      <RefList name="Properties" refName="ActorValueProperty" />
+      <RefList name="AttachParentSlots" refName="Keyword" />
+      <Data>
+        <Fields>
+          <Gendered name="Height">
+            <Fields>
+              <Float />
+            </Fields>
+          </Gendered>
+          <Gendered name="Weight">
+            <Fields>
+              <RefDirect refName="RaceWeight" />
+            </Fields>
+          </Gendered>
+          <Enum name="Flags" enumName="Race.Flag" byteLength="4" binaryOverlay="Custom" />
+          <Float name="AccelerationRate" />
+          <Float name="DecelerationRate" />
+          <Enum name="Size" enumName="Size" byteLength="4" />
+          <UInt64 name="Unknown" />
+          <Float name="InjuredHealthPercent" />
+          <Enum name="ShieldBipedObject" enumName="BipedObject" byteLength="4" default="BipedObject.None" />
+          <Enum name="BeardBipedObject" enumName="BipedObject" byteLength="4" default="BipedObject.None" />
+          <Enum name="BodyBipedObject" enumName="BipedObject" byteLength="4" default="BipedObject.None" />
+          <Float name="AimAngleTolerance" />
+          <Float name="FlightRadius" />
+          <Float name="AngularAccelerationRate" />
+          <Float name="AngularTolerance" />
+          <CustomLogic name="Flags2" byteLength="4" />
+          <ByteArray name="Unknown2" byteLength="36" />
+          <Enum name="PipboyBipedObject" enumName="BipedObject" byteLength="4" default="BipedObject.None" />
+          <Int16 name="XpValue" />
+          <Float name="SeverableDebrisScale" />
+          <UInt8 name="SeverableDebrisCount" />
+          <UInt8 name="SeverableDecalCount" />
+          <Float name="ExplodableDebrisScale" />
+          <UInt8 name="ExplodableDebrisCount" />
+          <UInt8 name="ExplodableDecalCount" />
+          <FormLink name="SeverableExplosion" refName="Explosion" />
+          <FormLink name="SeverableDebris" refName="Debris" />
+          <FormLink name="SeverableImpactDataSet" refName="ImpactDataSet" />
+          <FormLink name="ExplodableExplosion" refName="Explosion" />
+          <FormLink name="ExplodableDebris" refName="Debris" />
+          <FormLink name="ExplodableImpactDataSet" refName="ImpactDataSet" />
+          <Float name="OnCrippleDebrisScale" />
+          <UInt8 name="OnCrippleDebrisCount" />
+          <UInt8 name="OnCrippleDecalCount" />
+          <FormLink name="OnCrippleExplosion" refName="Explosion" />
+          <FormLink name="OnCrippleDebris" refName="Debris" />
+          <FormLink name="OnCrippleImpactDataSet" refName="ImpactDataSet" />
+          <FormLink name="ExplodableSubsegmentExplosion" refName="Explosion" />
+          <Float name="OrientationLimitsPitch" />
+          <Float name="OrientationLimitsRoll" />
+        </Fields>
+      </Data>
+      <Gendered name="SkeletalModel" maleMarker="MNAM" femaleMarker="FNAM">
+        <Fields>
+          <RefDirect refName="SimpleModel" recordType="ANAM">
+            <RecordTypeOverrides>
+              <Mapping From="MODL" To="ANAM" />
+            </RecordTypeOverrides>
+          </RefDirect>
+        </Fields>
+      </Gendered>
+      <List name="MovementTypeNames">
+        <String recordType="MTNM" binaryType="Plain" />
+      </List>
+      <Gendered name="Voices" recordType="VTCK" hasBeenSet="False" >
+        <Fields>
+          <FormLink refName="VoiceType" />
+        </Fields>
+      </Gendered>
+      <Gendered name="DefaultHairColors" recordType="HCLF">
+        <Fields>
+          <FormLink refName="ColorRecord" />
+        </Fields>
+      </Gendered>
+      <!-- ToDo: Need to remove and turn into derivative field -->
+      <UInt16 name="NumberOfTintsInList" recordType="TINL" />
+      <Float name="FacegenMainClamp" recordType="PNAM" hasBeenSet="False" />
+      <Float name="FacegenFaceClamp" recordType="UNAM" hasBeenSet="False" />
+      <FormLink name="AttackRace" recordType="ATKR" refName="Race" />
+      <RefList name="Attacks" refName="Attack" />
+      <Gendered name="BodyData" markerType="NAM1" maleMarker="MNAM" femaleMarker="FNAM" hasBeenSet="False" >
+        <Fields>
+          <RefDirect refName="BodyData" />
+        </Fields>
+      </Gendered>
+      <FormLink name="BodyPartData" refName="BodyPartData" recordType="GNAM" 
+      <CustomLogic name="ExtraNAM2" />
+      <Gendered name="BehaviorGraph" markerType="NAM3" maleMarker="MNAM" femaleMarker="FNAM" hasBeenSet="False" >
+        <Fields>
+          <RefDirect refName="Model" />
+        </Fields>
+      </Gendered>
+      <FormLink name="ImpactMaterialType" recordType="NAM4" refName="MaterialType" />
+      <FormLink name="ImpactDataSet" recordType="NAM5" refName="ImpactDataSet" />
+      <FormLink name="DismemberBloodArt" recordType="NAM7" refName="ArtObject" />
+      <FormLink name="MeatCapTextureSet" recordType="CNAM" refName="TextureSet" />
+      <FormLink name="CollarTextureSet" recordType="NAM2" refName="TextureSet" />
+      <FormLink name="OpenCorpseSound" recordType="ONAM" refName="SoundDescriptor" />
+      <FormLink name="CloseCorpseSound" recordType="LNAM" refName="SoundDescriptor" />
+      <Dict name="BipedObjectNames" binary="Custom" recordType="NAME">
+        <Key>
+          <Enum enumName="BipedObject" />
+        </Key>
+        <Value>
+          <String />
+        </Value>
+      </Dict>
+      <RefList name="BipedObjectConditions" refName="RaceBipedObjectCondition" />
+      <RefList name="MovementTypes" refName="RaceMovementType" />
+      <Enum name="EquipmentFlags" enumName="EquipTypeFlag" byteLength="4" recordType="VNAM" />
+      <RefList name="EquipmentSlots" refName="EquipSlot" />
+      <FormLink name="UnarmedWeapon" refName="EquipType" recordType="UNES" />
+      <CustomLogic name="FaceFxPhonemesListingParsing" recordType="PHTN" />
+      <CustomLogic name="FaceFxPhonemesRawParsing" recordType="PHWT" />
+      <RefDirect name="FaceFxPhonemes" refName="FaceFxPhonemes" binary="NoGeneration" />
+      <FormLink name="BaseMovementDefault" refName="MovementType" recordType="WKMV" />
+      <FormLink name="BaseMovementSwim" refName="MovementType" recordType="SWMV" />
+      <FormLink name="BaseMovementFly" refName="MovementType" recordType="FLMV" />
+      <FormLink name="BaseMovementSneak" refName="MovementType" recordType="SNMV" />
+      <Gendered name="HeadData" markerType="NAM0" maleMarker="MNAM" femaleMarker="FNAM" markerPerGender="true">
+        <FemaleTypeOverrides>
+          <Mapping From="RPRM" To="RPRF" />
+          <Mapping From="FTSM" To="FTSF" />
+          <Mapping From="AHCM" To="AHCF" />
+          <Mapping From="DFTM" To="DFTF" />
+        </FemaleTypeOverrides>
+        <Fields>
+          <RefDirect refName="HeadData" />
+        </Fields>
+      </Gendered>
+      <FormLink name="MorphRace" refName="Race" recordType="NAM8" />
+      <FormLink name="ArmorRace" refName="Race" recordType="RNAM" />
+    </Fields>
+    <LinkInterface>IRelatable</LinkInterface>
+  </Object>
+  <Object name="SkillBoost" objType="Subrecord" >
+    <Fields>
+      <Enum name="Skill" enumName="ActorValueExtended" byteLength="1" default="ActorValueExtended.None" />
+      <Int8 name="Boost" />
+    </Fields>
+  </Object>
+  <Object name="BodyData" objType="Subrecord" GUID="baeb0edf-c312-4f2b-9a87-b0bc6542773b" ID="60">
+    <Interface>IModeled</Interface>
+    <Fields>
+      <Enum name="Index" enumName="BodyData.PartIndex" byteLength="4" recordType="INDX" />
+      <RefDirect name="Model" refName="Model" />
+    </Fields>
+  </Object>
+  <Object name="RaceMovementType" objType="Subrecord" >
+    <Fields>
+      <FormLink name="MovementType" refName="MovementType" recordType="MTYP" />
+      <Data recordType="SPED" >
+        <Fields>
+          <RefDirect name="Left" refName="SpeedOffsets" />
+          <RefDirect name="Right" refName="SpeedOffsets" />
+          <RefDirect name="Forward" refName="SpeedOffsets" />
+          <RefDirect name="Back" refName="SpeedOffsets" />
+          <RefDirect name="Pitch" refName="SpeedRotations" />
+          <RefDirect name="Roll" refName="SpeedRotations" />
+          <RefDirect name="Yaw" refName="SpeedRotations" />
+          <Float name="Unknown" />
+          <Float name="Unknown2" />
+          <Float name="Unknown3" />
+        </Fields>
+      </Data>
+    </Fields>
+  </Object>
+  <Object name="SpeedOffsets" objType="Subrecord" >
+    <Fields>
+      <Float name="Standing" />
+      <Float name="Walk" />
+      <Float name="Run" />
+      <Float name="Sprint" />
+    </Fields>
+  </Object>
+  <Object name="SpeedRotations" objType="Subrecord" >
+    <Fields>
+      <!-- ToDo: Add rotation mechanics instead of raw floats -->
+      <Float name="Standing" />
+      <Float name="Walk" />
+      <Float name="Run" />
+      <Float name="Sprint" />
+    </Fields>
+  </Object>
+  <Object name="FaceFxPhonemes" objType="Subrecord" >
+    <Fields>
+      <Bool name="ForceNames" binary="NoGeneration" />
+      <RefDirect name="Aah_LipBigAah" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="BigAah_LipDST" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="BMP_LipEee" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="ChJSh_LipFV" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="DST_LipK" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="Eee_LipL" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="Eh_LipR" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="FV_LipTh" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="I" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="K" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="N" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="Oh" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="OohQ" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="R" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="Th" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+      <RefDirect name="W" hasBeenSet="True" refName="Phoneme" binary="NoGeneration" />
+    </Fields>
+  </Object>
+  <Object name="Phoneme" objType="Subrecord" >
+    <Fields>
+      <String name="Name" binary="NoGeneration" />
+      <Float name="IY" binary="NoGeneration" />
+      <Float name="IH" binary="NoGeneration" />
+      <Float name="EH" binary="NoGeneration" />
+      <Float name="EY" binary="NoGeneration" />
+      <Float name="AE" binary="NoGeneration" />
+      <Float name="AA" binary="NoGeneration" />
+      <Float name="AW" binary="NoGeneration" />
+      <Float name="AY" binary="NoGeneration" />
+      <Float name="AH" binary="NoGeneration" />
+      <Float name="AO" binary="NoGeneration" />
+      <Float name="OY" binary="NoGeneration" />
+      <Float name="OW" binary="NoGeneration" />
+      <Float name="UH" binary="NoGeneration" />
+      <Float name="UW" binary="NoGeneration" />
+      <Float name="ER" binary="NoGeneration" />
+      <Float name="AX" binary="NoGeneration" />
+      <Float name="S" binary="NoGeneration" />
+      <Float name="SH" binary="NoGeneration" />
+      <Float name="Z" binary="NoGeneration" />
+      <Float name="ZH" binary="NoGeneration" />
+      <Float name="F" binary="NoGeneration" />
+      <Float name="TH" binary="NoGeneration" />
+      <Float name="V" binary="NoGeneration" />
+      <Float name="DH" binary="NoGeneration" />
+      <Float name="M" binary="NoGeneration" />
+      <Float name="N" binary="NoGeneration" />
+      <Float name="NG" binary="NoGeneration" />
+      <Float name="L" binary="NoGeneration" />
+      <Float name="R" binary="NoGeneration" />
+      <Float name="W" binary="NoGeneration" />
+      <Float name="Y" binary="NoGeneration" />
+      <Float name="HH" binary="NoGeneration" />
+      <Float name="B" binary="NoGeneration" />
+      <Float name="D" binary="NoGeneration" />
+      <Float name="JH" binary="NoGeneration" />
+      <Float name="G" binary="NoGeneration" />
+      <Float name="P" binary="NoGeneration" />
+      <Float name="T" binary="NoGeneration" />
+      <Float name="K" binary="NoGeneration" />
+      <Float name="CH" binary="NoGeneration" />
+      <Float name="SIL" binary="NoGeneration" />
+      <Float name="SHOTSIL" binary="NoGeneration" />
+      <Float name="FLAP" binary="NoGeneration" />
+    </Fields>
+  </Object>
+  <Object name="HeadData" objType="Subrecord" >
+    <Interface>IModeled</Interface>
+    <Fields>
+      <RefList name="HeadParts" refName="HeadPartReference" />
+      <RefDirect name="AvailableMorphs" refName="AvailableMorphs" />
+      <List name="RacePresets">
+        <FormLink refName="Npc" recordType="RPRM" />
+      </List>
+      <List name="AvailableHairColors">
+        <FormLink refName="ColorRecord" recordType="AHCM" />
+      </List>
+      <List name="FaceDetails">
+        <FormLink refName="TextureSet" recordType="FTSM" />
+      </List>
+      <FormLink name="DefaultFaceTexture" refName="TextureSet" recordType="DFTM" />
+      <RefList name="TintMasks" refName="TintAssets" />
+      <RefDirect name="Model" refName="Model" />
+    </Fields>
+  </Object>
+  <Object name="HeadPartReference" objType="Subrecord" >
+    <Fields>
+      <Int32 name="Number" recordType="INDX" />
+      <FormLink name="Head" refName="HeadPart" recordType="HEAD" />
+    </Fields>
+  </Object>
+  <Object name="AvailableMorphs" objType="Subrecord" >
+    <Fields>
+      <CustomLogic name="Parse" recordType="MPAI" />
+      <RefDirect name="Nose" refName="Morph" hasBeenSet="True" binary="NoGeneration" />
+      <RefDirect name="Brow" refName="Morph" hasBeenSet="True" binary="NoGeneration" />
+      <RefDirect name="Eye" refName="Morph" hasBeenSet="True" binary="NoGeneration" />
+      <RefDirect name="Lip" refName="Morph" hasBeenSet="True" binary="NoGeneration" />
+    </Fields>
+  </Object>
+  <Object name="Morph" objType="Subrecord" >
+    <Fields>
+      <ByteArray name="Data" byteLength="32" hasBeenSet="False" />
+    </Fields>
+  </Object>
+  <Object name="TintAssets" objType="Subrecord" >
+    <Fields>
+      <UInt16 name="Index" recordType="TINI" />
+      <String name="FileName" recordType="TINT" />
+      <Enum name="MaskType" enumName="TintAssets.TintMaskType" byteLength="2" recordType="TINP" />
+      <FormLink name="PresetDefault" refName="ColorRecord" recordType="TIND" />
+      <RefList name="Presets" refName="TintPreset" />
+    </Fields>
+  </Object>
+  <Object name="TintPreset" objType="Subrecord" >
+    <Fields>
+      <FormLink name="Color" refName="ColorRecord" recordType="TINC" />
+      <Float name="DefaultValue" recordType="TINV" />
+      <UInt16 name="Index" recordType="TIRS" />
+    </Fields>
+  </Object>
+  <Object name="MountData" objType="Subrecord" >
+    <Fields>
+      <P3Float name="MountOffset" />
+      <P3Float name="DismountOffset" />
+      <P3Float name="MountCameraOffset" />
+    </Fields>
+  </Object>
+  <Object name="RaceWeight" objType="Subrecord" >
+    <Fields>
+      <P3Float name="Thin" />
+      <P3Float name="Muscular" />
+      <P3Float name="Fat" />
+    </Fields>
+  </Object>
+  <Object name="RaceBipedObjectCondition" objType="Subrecord" recordType="RBPC" >
+    <Fields>
+      <UInt32 name="Slot30PlusInt" >
+        <Versioning version="78" action="Remove" />
+      </UInt32>
+      <FormLink name="Slot30Plus" refName="ActorValueInformation" >
+        <Versioning version="78" />
+      </UInt32>
+    </Fields>
+  </Object>
+</Loqui>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="SkyrimMod" objType="Mod" ctorPermission="protected" >
+    <Fields>
+      <RefDirect name="ModHeader" refName="ModHeader" singleton="true" />
+    </Fields>
+  </Object>
+</Loqui>

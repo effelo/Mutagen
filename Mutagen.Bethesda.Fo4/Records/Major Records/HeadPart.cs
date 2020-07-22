@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mutagen.Bethesda.Skyrim
+namespace Mutagen.Bethesda.Fo4
 {
     public partial class HeadPart
     {
@@ -44,6 +44,7 @@ namespace Mutagen.Bethesda.Skyrim
             Female = 0x04,
             IsExtraPart = 0x10,
             UseSolidTint = 0x20,
+            UsesBodyTexture = 0x40,
         }
 
         [Flags]

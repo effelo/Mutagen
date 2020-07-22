@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="ActionRecord" recordType="AACT" objType="Record" baseClass="Fo4MajorRecord">
+    <Fields>
+      <Color name="Color" recordType="CNAM" binaryType="Alpha" />
+    </Fields>
+  </Object>
+</Loqui>

@@ -1,0 +1,37 @@
+  <Object name="ModHeader" recordType="TES4" objType="Record">
+    <Fields>
+      <Enum name="Flags" enumName="ModHeader.HeaderFlag" byteLength="4" />
+      <UInt32 name="FormID" />
+      <Int32 name="Version" />
+      <UInt16 name="FormVersion" />
+      <UInt16 name="Version2" />
+      <RefDirect name="Stats" refName="ModStats" hasBeenSet="False" />
+      <ByteArray name="TypeOffsets" recordType="OFST" />
+      <ByteArray name="Deleted" recordType="DELE" />
+      <String name="Author" recordType="CNAM" maxLength="512" />
+      <String name="Description" recordType="SNAM" maxLength="512" />
+      <RefList name="MasterReferences" refName="Bethesda.MasterReference" hasBeenSet="False" binary="Custom" binaryOverlay="Normal" />
+      <List name="OverriddenForms" recordType="ONAM">
+        <FormLink refName="SkyrimMajorRecord" />
+      </List>
+      <ByteArray name="Screenshot" recordType="SCRN" />
+      <RefList name="TransientTypes" refName=TransientType" />
+      <Int32 name="INTV" recordType="INTV" />
+      <Int32 name="INCC" recordType="INCC" />
+    </Fields>
+  </Object>
+  <Object name="ModStats" recordType="HEDR" objType="Subrecord" >
+    <Fields>
+      <Float name="Version" />
+      <Int32 name="NumRecords" />
+      <UInt32 name="NextObjectID" />
+    </Fields>
+  </Object>
+  <Object name="TransientType" recordType="TNAM" objType="Subrecord" >
+    <Fields>
+      <UInt32 name="FormType" />
+      <List name="Forms">
+        <FormLink refName="Fo4MajorRecord" />
+      </List>
+    </Fields>
+  </Object>

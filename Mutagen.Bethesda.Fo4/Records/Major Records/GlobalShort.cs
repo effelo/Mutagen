@@ -9,7 +9,7 @@ using Mutagen.Bethesda.Binary;
 using Noggog;
 using Mutagen.Bethesda.Internals;
 
-namespace Mutagen.Bethesda.Skyrim
+namespace Mutagen.Bethesda.Fo4
 {
     public partial class GlobalShort
     {
@@ -61,7 +61,7 @@ namespace Mutagen.Bethesda.Skyrim
             public bool GetDataIsSetCustom() => _DataLocation.HasValue;
             public short GetDataCustom()
             {
-                return (short)HeaderTranslation.ExtractSubrecordMemory(_data, _DataLocation!.Value, _package.MetaData.Constants).Float();
+                return (short)HeaderTranslation.ExtractSubrecordSpan(_data.Span, _DataLocation!.Value, _package.MetaData.Constants).GetFloat();
             }
             partial void DataCustomParse(OverlayStream stream, long finalPos, int offset)
             {

@@ -9,7 +9,7 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mutagen.Bethesda.Skyrim
+namespace Mutagen.Bethesda.Fo4
 {
     public partial class GlobalInt
     {
@@ -68,7 +68,7 @@ namespace Mutagen.Bethesda.Skyrim
             public bool GetDataIsSetCustom() => _DataLocation.HasValue;
             public int GetDataCustom()
             {
-                return (int)HeaderTranslation.ExtractSubrecordMemory(_data, _DataLocation!.Value, _package.MetaData.Constants).Float();
+                return (int)HeaderTranslation.ExtractSubrecordSpan(_data.Span, _DataLocation!.Value, _package.MetaData.Constants).GetFloat();
             }
             partial void DataCustomParse(OverlayStream stream, long finalPos, int offset)
             {

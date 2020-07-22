@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="Faction" recordType="FACT" objType="Record" baseClass="Fo4MajorRecord" >
+    <Interface>ITranslatedNamed</Interface>
+    <Fields>
+      <String name="Name" recordType="FULL" translated="Normal" />
+      <RefList name="Relations" refName="Relation" />
+      <Enum name="Flags" recordType="DATA" enumName="Faction.FactionFlag" byteLength="4" hasBeenSet="False" />
+      <FormLink name="ExteriorJailMarker" recordType="JAIL" refName="PlacedObject" />
+      <FormLink name="FollowerWaitMarker" recordType="WAIT" refName="PlacedObject" />
+      <FormLink name="StolenGoodsContainer" recordType="STOL" refName="PlacedObject" />
+      <FormLink name="PlayerInventoryContainer" recordType="PLCN" refName="PlacedObject" />
+      <FormLink name="SharedCrimeFactionList" recordType="CRGR" refName="FormList" />
+      <FormLink name="JailOutfit" recordType="JOUT" refName="Outfit" />
+      <RefDirect name="CrimeValues" refName="CrimeValues" />
+      <RefList name="Ranks" refName="Rank" />
+      <FormLink name="VendorBuySellList" recordType="VEND" refName="FormList" />
+      <FormLink name="MerchantContainer" recordType="VENC" refName="PlacedObject" />
+      <RefDirect name="VendorValues" refName="VendorValues" />
+      <RefDirect name="VendorLocation" refName="LocationTargetRadius" recordType="PLVD" />
+      <RefList name="Conditions" refName="Condition" counterRecType="CITC" binary="Custom" />
+    </Fields>
+  </Object>
+  <Object name="CrimeValues" objType="Subrecord" recordType="CRVA" >
+    <Fields>
+      <Bool name="Arrest" byteLength="1" />
+      <Bool name="AttackOnSight" byteLength="1" />
+      <UInt16 name="Murder" />
+      <UInt16 name="Assault" />
+      <UInt16 name="Trespass" />
+      <UInt16 name="Pickpocket" />
+      <UInt16 name="Unknown" />
+      <Float name="StealMult" />
+      <UInt16 name="Escape" />
+      <UInt16 name="Werewolf" />
+    </Fields>
+  </Object>
+  <Object name="Rank" objType="Subrecord">
+    <Fields>
+      <UInt32 name="RankNumber" recordType="RNAM" />
+      <Gendered name="RankTitle" maleMarker="MNAM" femaleMarker="FNAM" >
+        <Fields>
+          <String translate="Normal" />
+        </Fields>
+      </Gendered>
+      <String name="Insignia" recordType="INAM" />
+    </Fields>
+  </Object>
+  <Object name="VendorValues" objType="Subrecord" recordType="VENV" >
+    <Fields>
+      <UInt16 name="StartHour" />
+      <UInt16 name="EndHour" />
+      <UInt16 name="Radius" />
+      <UInt16 name="Unknown"/>
+      <Bool name="OnlyBuysStolenItems" byteLength="1" />
+      <Bool name="BuysEverythingNotInList" byteLength="1" />
+      <Bool name="BuysNonStolenItems" byteLength="1" />
+      <UInt8 name="Unknown2" />
+    </Fields>
+  </Object>
+</Loqui>
