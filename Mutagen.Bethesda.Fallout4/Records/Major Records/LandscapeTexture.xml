@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="LandscapeTexture" recordType="LTEX" objType="Record" baseClass="Fallout4MajorRecord" GUID="f6e8d6f6-773c-4c3b-b09b-d892c0114ed7" ID="130">
+    <Fields>
+      <FormLink name="TextureSet" refName="TextureSet" recordType="TNAM" />
+      <FormLink name="MaterialType" refName="MaterialType" recordType="MNAM" nullable="False" />
+      <Data recordType="HNAM" >
+        <Fields>
+          <UInt8 name="HavokFriction" />
+          <UInt8 name="HavokRestitution" />
+        </Fields>
+      </Data>
+      <UInt8 name="TextureSpecularExponent" recordType="SNAM" nullable="False" />
+      <List name="Grasses">
+        <FormLink refName="Grass" recordType="GNAM" />
+      </List>
+      <Enum name="Flags" enumName="LandscapeTexture.Flag" byteLength="4" recordType="INAM" >
+        <Versioning formVersion="43" />
+      </Enum>
+    </Fields>
+    <LinkInterface>IRegionTarget</LinkInterface>
+  </Object>
+</Loqui>

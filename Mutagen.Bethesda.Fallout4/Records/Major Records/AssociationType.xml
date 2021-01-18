@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="AssociationType" objType="Record" recordType="ASTP" baseClass="Fallout4MajorRecord" GUID="5de359e7-27e8-4476-9bde-27a98d336b5e" ID="462">
+    <Fields>
+      <Gendered name="ParentTitle" maleMarker="MPRT" femaleMarker="FPRT" >
+        <Fields>
+          <String />
+        </Fields>
+      </Gendered>
+      <Gendered name="Title" maleMarker="MCHT" femaleMarker="FCHT" >
+        <Fields>
+          <String />
+        </Fields>
+      </Gendered>
+      <Enum name="Flags" enumName="AssociationType.Flag" recordType="DATA" nullable="False" />
+    </Fields>
+  </Object>
+</Loqui>

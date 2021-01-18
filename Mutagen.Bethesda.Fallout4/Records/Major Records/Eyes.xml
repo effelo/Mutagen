@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="Eyes" recordType="EYES" objType="Record" majorFlag="true" baseClass="Fallout4MajorRecord" GUID="db478bd6-1bf7-44f7-86ff-577ca301cbfb" ID="47">
+    <Interface>ITranslatedNamedRequired</Interface>
+    <Fields>
+      <String name="Name" recordType="FULL" nullable="False" translated="Normal" />
+      <String name="Icon" recordType="ICON" nullable="False" />
+      <Enum name="Flags" recordType="DATA" enumName="Eyes.Flag" byteLength="1" nullable="False" />
+    </Fields>
+  </Object>
+</Loqui>

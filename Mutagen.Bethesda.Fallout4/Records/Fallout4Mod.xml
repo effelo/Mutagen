@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="Fallout4Mod" objType="Mod" ctorPermission="protected" GUID="1FF3CC16-F707-47A0-9062-97780094D919" ID="333">
+    <Fields>
+      <RefDirect name="ModHeader" refName="Fallout4ModHeader" singleton="true" />
+      <Group name="GameSettings" refName="GameSetting" />
+      <!--<Group name="Keywords" refName="Keyword" />
+      <Group name="LocationReferenceTypes" refName="LocationReferenceType" />
+      <Group name="Actions" refName="ActionRecord" />
+      <Group name="TextureSets" refName="TextureSet" />
+      <Group name="Globals" refName="Global" />
+      <Group name="Classes" refName="Class" />
+      <Group name="Factions" refName="Faction" />
+      <Group name="HeadParts" refName="HeadPart" />
+      <Group name="Hairs" refName="Hair" />
+      <Group name="Eyes" refName="Eyes" />
+      <Group name="Races" refName="Race" />
+      <Group name="SoundMarkers" refName="SoundMarker" />
+      <Group name="AcousticSpaces" refName="AcousticSpace" />
+      <Group name="MagicEffects" refName="MagicEffect" />
+      <Group name="LandscapeTextures" refName="LandscapeTexture" />
+      <Group name="ObjectEffects" refName="ObjectEffect" />
+      <Group name="Spells" refName="Spell" />
+      <Group name="Scrolls" refName="Scroll" />
+      <Group name="Activators" refName="Activator" />
+      <Group name="TalkingActivators" refName="TalkingActivator" />
+      <Group name="Armors" refName="Armor" />
+      <Group name="Books" refName="Book" />
+      <Group name="Containers" refName="Container" />
+      <Group name="Doors" refName="Door" />
+      <Group name="Ingredients" refName="Ingredient" />
+      <Group name="Lights" refName="Light" />
+      <Group name="MiscItems" refName="MiscItem" />
+      <Group name="AlchemicalApparatuses" refName="AlchemicalApparatus" />
+      <Group name="Statics" refName="Static" />
+      <Group name="MoveableStatics" refName="MoveableStatic" />
+      <Group name="Grasses" refName="Grass" />
+      <Group name="Trees" refName="Tree" />
+      <Group name="Florae" refName="Flora" />
+      <Group name="Furniture" refName="Furniture" />
+      <Group name="Weapons" refName="Weapon" />
+      <Group name="Ammunitions" refName="Ammunition" />
+      <Group name="Npcs" refName="Npc" />
+      <Group name="LeveledNpcs" refName="LeveledNpc" />
+      <Group name="Keys" refName="Key" />
+      <Group name="Ingestibles" refName="Ingestible" />
+      <Group name="IdleMarkers" refName="IdleMarker" />
+      <Group name="ConstructibleObjects" refName="ConstructibleObject" />
+      <Group name="Projectiles" refName="Projectile" />
+      <Group name="Hazards" refName="Hazard" />
+      <Group name="SoulGems" refName="SoulGem" />
+      <Group name="LeveledItems" refName="LeveledItem" />
+      <Group name="Weathers" refName="Weather" />
+      <Group name="Climates" refName="Climate" />
+      <Group name="ShaderParticleGeometries" refName="ShaderParticleGeometry" />
+      <Group name="VisualEffects" refName="VisualEffect" />
+      <Group name="Regions" refName="Region" />
+      <Group name="NavigationMeshInfoMaps" refName="NavigationMeshInfoMap" />
+      <Ref name="Cells" singleton="true" >
+        <Direct refName="ListGroup" >
+          <GenericSpecification Definition="Fallout4.CellBlock" TypeToSpecify="T" />
+        </Direct>
+      </Ref>
+      <Group name="Worldspaces" refName="Worldspace" />
+      <Group name="DialogTopics" refName="DialogTopic" />
+      <Group name="Quests" refName="Quest" />
+      <Group name="IdleAnimations" refName="IdleAnimation" />
+      <Group name="Packages" refName="Package" />
+      <Group name="CombatStyles" refName="CombatStyle" />
+      <Group name="LoadScreens" refName="LoadScreen" />
+      <Group name="LeveledSpells" refName="LeveledSpell" />
+      <Group name="AnimatedObjects" refName="AnimatedObject" />
+      <Group name="Waters" refName="Water" />
+      <Group name="EffectShaders" refName="EffectShader" />
+      <Group name="Explosions" refName="Explosion" />
+      <Group name="Debris" refName="Debris" />
+      <Group name="ImageSpaces" refName="ImageSpace" />
+      <Group name="ImageSpaceAdapters" refName="ImageSpaceAdapter" />
+      <Group name="FormLists" refName="FormList" />
+      <Group name="Perks" refName="Perk" />
+      <Group name="BodyParts" refName="BodyPartData" />
+      <Group name="AddonNodes" refName="AddonNode" />
+      <Group name="ActorValueInformation" refName="ActorValueInformation" />
+      <Group name="CameraShots" refName="CameraShot" />
+      <Group name="CameraPaths" refName="CameraPath" />
+      <Group name="VoiceTypes" refName="VoiceType" />
+      <Group name="MaterialTypes" refName="MaterialType" />
+      <Group name="Impacts" refName="Impact" />
+      <Group name="ImpactDataSets" refName="ImpactDataSet" />
+      <Group name="ArmorAddons" refName="ArmorAddon" />
+      <Group name="EncounterZones" refName="EncounterZone" />
+      <Group name="Locations" refName="Location" />
+      <Group name="Messages" refName="Message" />
+      <Group name="DefaultObjectManagers" refName="DefaultObjectManager" />
+      <Group name="LightingTemplates" refName="LightingTemplate" />
+      <Group name="MusicTypes" refName="MusicType" />
+      <Group name="Footsteps" refName="Footstep" />
+      <Group name="FootstepSets" refName="FootstepSet" />
+      <Group name="StoryManagerBranchNodes" refName="StoryManagerBranchNode" />
+      <Group name="StoryManagerQuestNodes" refName="StoryManagerQuestNode" />
+      <Group name="StoryManagerEventNodes" refName="StoryManagerEventNode" />
+      <Group name="DialogBranches" refName="DialogBranch" />
+      <Group name="MusicTracks" refName="MusicTrack" />
+      <Group name="DialogViews" refName="DialogView" />
+      <Group name="WordsOfPower" refName="WordOfPower" />
+      <Group name="Shouts" refName="Shout" />
+      <Group name="EquipTypes" refName="EquipType" />
+      <Group name="Relationships" refName="Relationship" />
+      <Group name="Scenes" refName="Scene" />
+      <Group name="AssociationTypes" refName="AssociationType" />
+      <Group name="Outfits" refName="Outfit" />
+      <Group name="ArtObjects" refName="ArtObject" />
+      <Group name="MaterialObjects" refName="MaterialObject" />
+      <Group name="MovementTypes" refName="MovementType" />
+      <Group name="SoundDescriptors" refName="SoundDescriptor" />
+      <Group name="DualCastData" refName="DualCastData" />
+      <Group name="SoundCategories" refName="SoundCategory" />
+      <Group name="SoundOutputModels" refName="SoundOutputModel" />
+      <Group name="CollisionLayers" refName="CollisionLayer" />
+      <Group name="Colors" refName="ColorRecord" />
+      <Group name="ReverbParameters" refName="ReverbParameters" />
+      <Group name="VolumetricLightings" refName="VolumetricLighting" />-->
+    </Fields>
+    <GameReleaseOptions>Fallout4</GameReleaseOptions>
+    <!--<GameReleaseOptions>Fallout4LE</GameReleaseOptions>
+    <GameReleaseOptions>Fallout4SE</GameReleaseOptions>
+    <GameReleaseOptions>Fallout4VR</GameReleaseOptions>-->
+  </Object>
+</Loqui>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Loqui xmlns="http://tempuri.org/LoquiSource.xsd">
+  <Object name="SoundMarker" recordType="SOUN" objType="Record" baseClass="Fallout4MajorRecord" GUID="2915cf72-d87a-4b5d-bb19-2ec3c3801d6f" ID="85">
+    <Interface>IObjectBounded</Interface>
+    <Fields>
+      <RefDirect name="ObjectBounds" refName="ObjectBounds" nullable="False" />
+      <ByteArray name="FNAM" recordType="FNAM" />
+      <ByteArray name="SNDD" recordType="SNDD" />
+      <FormLink name="SoundDescriptor" recordType="SDSC" refName="SoundDescriptor" />
+    </Fields>
+    <LinkInterface>IObjectId</LinkInterface>
+    <LinkInterface>ISound</LinkInterface>
+  </Object>
+</Loqui>
